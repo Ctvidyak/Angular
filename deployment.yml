@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment                                          
+metadata:
+  name: angular-frontend
+spec:
+  replicas: 2                                             
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   
+    rollingUpdate: 
+      maxUnavailable: 1                                   
+      maxSurge: 1                                         
+  template:
+    metadata:
+      labels:
+        app: angualr-frontend                                  
+    spec:
+      containers:
+        - image: icsaksregistry1.azurecr.io/angular:#{RELEASE.ARTIFACTS._kube-devops-Angular.BUILDID}# 
+          imagePullPolicy: Always                         
+          name: angular-frontend
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+      - name: icsaksregistry  
