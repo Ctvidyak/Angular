@@ -16,7 +16,7 @@ spec:
         app: angualr-frontend                                  
     spec:
       containers:
-        - image: icsaksregistry1.azurecr.io/angular:#{RELEASE.ARTIFACTS._kube-devops-Angular.BUILDID}# 
+        - image: icsaksregistry1.azurecr.io/angular:#{RELEASE.ARTIFACTS.Angular-Artifact.BUILDID}# 
           imagePullPolicy: Always                         
           name: angular-frontend
           ports:
