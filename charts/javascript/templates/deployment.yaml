@@ -16,7 +16,7 @@ spec:
         app: angualr-frontend                                  # 6
     spec:
       containers:
-        - image: ctmsacr.azurecr.io/angular:{{.Values.image.tag}}
+        - image: icsaksregistry.azurecr.io/angular:{{.Values.image.tag}}
           imagePullPolicy: Always                         # 7
           name: angular-frontend
           ports:
