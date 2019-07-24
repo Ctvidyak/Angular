@@ -1,9 +1,9 @@
 version: '3'
 services:
-  web:
+  angular:
     build: .
     ports:
-    - "4330:4200"
+    - "4200:4200"
     
 
     
